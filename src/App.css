@@ -30,6 +30,7 @@ h1 {
   margin: 0;
   width: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-height: 10vh;
 }
 
 /* Contenedor del calendario */
@@ -44,8 +45,8 @@ h1 {
 
 /* Calendario */
 .fc {
-  width: 90% !important; /* ✅ Ancho definido */
-  max-width: 95vw;
+  width: 100% !important; /* ✅ Ancho definido */
+  max-width: 100vw;
   margin: 0 auto !important; /* ✅ Centrado */
   background-color: white;
   border-radius: 10px;
@@ -127,4 +128,45 @@ h1 {
   overflow: hidden !important;
   margin: 0 !important;
   padding: 0 !important;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  background-color: #1a73e8;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 180px;
+}
+
+.sidebar button {
+  background-color: white;
+  color: #1a73e8;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.contenido {
+  flex-grow: 1;
+  padding: 10px;
+  background-color: #f8f9fa;
+  max-height: 100vh;
+}
+
+.calendar-container {
+  flex: 1;
+  background-color: #f8f9fa;
+  overflow: auto;
+  min-height: 80vh; /* Asegura espacio para el calendario */
+  max-height: 90vh;
+  height: 100%;
 }
