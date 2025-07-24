@@ -7,14 +7,16 @@ function App() {
   return (
     <div className="App">
       <h1>Agenda de Turnos 💈 Barbería</h1>
-      <FullCalendar
-        plugins={[dayGridPlugin]}
-        initialView="dayGridMonth"
-        events={[
-          { title: 'Turno - Juan', date: '2025-07-24' },
-          { title: 'Turno - Ana', date: '2025-07-25' }
-        ]}
-      />
+      <div className="calendar-container">
+        <FullCalendar
+          plugins={[dayGridPlugin]}
+          initialView="dayGridMonth"
+          events={[
+            { title: 'Turno - Juan', date: '2025-07-24' },
+            { title: 'Turno - Ana', date: '2025-07-25' }
+          ]}
+        />
+      </div>
     </div>
   );
 }

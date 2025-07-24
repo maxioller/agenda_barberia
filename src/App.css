@@ -1,71 +1,130 @@
 /* Fondo general */
-body {
-  background-color: #121212;
-  color: #e0e0e0;
-  font-family: 'Segoe UI', 'Roboto', sans-serif;
-  padding: 40px;
+html, body, #root {
   margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1668e4;
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  color: #202124;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Título principal */
+/* Contenedor principal */
+.App {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+/* Encabezado */
 h1 {
+  background-color: #1a73e8;
+  color: white;
+  font-size: 2.2rem;
+  font-weight: 500;
   text-align: center;
-  margin-bottom: 30px;
-  color: #f1c40f;
-  font-size: 2.5rem;
-  font-weight: 600;
+  padding: 20px 0;
+  margin: 0;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Contenedor del calendario */
+.calendar-container {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* ✅ Centrado horizontal */
+  align-items: stretch;
+  padding: 0;
+  width: 100%;
+}
+
+/* Calendario */
 .fc {
-  background-color: #1e1e1e;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-}
-
-/* Eventos */
-.fc-event {
-  background-color: #00c896 !important;
-  border: none !important;
-  border-radius: 8px;
-  color: white !important;
-  font-weight: 500;
-  padding: 5px 10px !important;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-/* Días del mes */
-.fc-daygrid-day-number {
-  color: #90caf9;
-  font-weight: 500;
-}
-
-/* Header del calendario */
-.fc-toolbar-title {
-  color: #ffffff;
-  font-size: 1.5rem;
-}
-
-.fc-button {
-  background-color: #333 !important;
-  color: #ffffff !important;
-  border: none !important;
-  border-radius: 6px !important;
-  transition: background-color 0.3s ease;
-}
-
-.fc-button:hover {
-  background-color: #555 !important;
+  width: 90% !important; /* ✅ Ancho definido */
+  max-width: 95vw;
+  margin: 0 auto !important; /* ✅ Centrado */
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  flex: 1;
 }
 
 /* Día actual */
 .fc-day-today {
-  background-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: #e8f0fe !important;
 }
 
-/* Bordes de celdas del calendario */
+/* Título del calendario */
+.fc-toolbar-title {
+  color: #202124;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+/* Botones */
+.fc-button {
+  background-color: white !important;
+  color: #1a73e8 !important;
+  border: 1px solid #dadce0 !important;
+  border-radius: 6px !important;
+  font-weight: 500;
+}
+.fc-button:hover {
+  background-color: #f1f3f4 !important;
+}
+
+/* Números de los días */
+.fc-daygrid-day-number {
+  color: #3c4043;
+  font-weight: 400;
+  font-size: 0.9rem;
+  padding: 4px;
+}
+
+/* Bordes de celdas */
 .fc-theme-standard td,
 .fc-theme-standard th {
-  border: 1px solid #333;
+  border: 1px solid #e0e0e0;
+}
+
+/* Eventos */
+.fc-event {
+  background-color: #1a73e8 !important;
+  color: white !important;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  padding: 2px 6px !important;
+  font-weight: 500;
+  border: none !important;
+  margin-top: 2px;
+  box-shadow: none !important;
+}
+
+/* Estructura de columnas del calendario */
+.fc-scrollgrid {
+  width: 100% !important;
+  table-layout: fixed !important;
+}
+.fc-scrollgrid td,
+.fc-scrollgrid th {
+  width: calc(100% / 7) !important;
+}
+
+/* Altura total del calendario */
+.fc-view-harness,
+.fc-view {
+  height: 100% !important;
+}
+
+/* Scroll y padding innecesarios */
+.fc-scroller,
+.fc-daygrid-body,
+.fc-scrollgrid-sync-table {
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
